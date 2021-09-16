@@ -22,12 +22,13 @@ def main():
         while True:
             conn, addr = s.accept()
             print("Connected by", addr)
-            
-            #recieve data, wait a bit, then send it back
             full_data = conn.recv(BUFFER_SIZE)
+            print("recieved:", full_data)
+            #recieve data, wait a bit, then send it back
             time.sleep(0.5)
             conn.sendall(full_data)
             conn.close()
+            
 
 if __name__ == "__main__":
     main()

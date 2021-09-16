@@ -48,7 +48,7 @@ def main():
         remote_ip = get_remote_ip(host)
 
         s.connect((remote_ip , port))
-        print (f'Socket Connected to {host} on ip {remote_ip}')
+        print (f'Socket Connected to local host on ip {remote_ip}')
         
         #send the data and shutdown
         send_data(s, payload)
